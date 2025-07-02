@@ -1,0 +1,226 @@
+{
+  "specific-prompt": [
+        {
+            "question":"Jelaskan kegunaan karbohidrat untuk tubuh kita.",
+            "reference_answer":"Fungsi karbohidrat adalah sebagai pemasok energi, dapat memperlancar proses pada pencernaan, memberikan efek kenyang dengan kandungan selulosa-nya dan penyeimbang asam dan basa dalam tubuh",
+            "dataset_id":1
+        },
+        {
+            "question":"Deskripsikan 4 manfaat telur untuk kesehatan?",
+            "reference_answer":"1. Bermanfaat untuk pasien kemoterapi Karena kandungan protein yang tinggi , putih telur sangat disarankan untuk kemoterapi dan pasien ginjal. 2. Masker wajah Putih telur juga banyak digunakan untuk masker wajah, dimana diyakini dapat mengenyalkan, serta mencerahkan kulit. 3. Kekebalan tubuh dan kesehatan mata Secara keseluruhan , telur baik untuk menjaga sistem kekebalan tubuh, dan telah digunakan untuk mengobati katarak , degenerasi makula dan membantu untuk membangun tulang yang kuat. 4. Membantu diet Karena putih telur tinggi protein, maka ia bisa menggantikan kebutuhan karbohidrat bagi yang sedang diet menurunkan berat badan. Manfaat protein termasuk juga bisa menggantikan fungsi karbohidrat untuk energi.",
+            "dataset_id":2
+        },
+        {
+            "question":"Sebutkan lebih dari 10 cara merawat kesehatan rambut?",
+            "reference_answer":"1. Selalu lindungi rambutmu dari sinar matahari, angin dan hujan 2. Setelah keramas jangan langsung menyisir, tunggu beberapa saat sampai rambut agak kering 3. Gunakan kondisioner setelah keramas. Kondisioner dapat membantu agar rambutmu semakin lurus 4. Lakukan conditioning dengan benar. 5. Pilih sampo dan kondisioner dari jenis yang sama karena memiliki formulasi yang sama. 6. Hindari penggunaan hair dryer pada rambut. 7. Hindari menggunakan ikat rambut yang super ketat. 8. Ketika tidur di malam hari, biarkan rambut tergerai pada satu sisi untuk menghindari kekusutan rambut. 9. Tidur menggunakan bantal yang terbuat dari satin. 10. Ketika mengeringkan rambut, lakukan dengan cara ditekan. 11. Gunakan masker rambut yang cocok untuk rambut. 12. Gunakan air dingin untuk keramas. 13. Makan yang benar. Nutrisi tertentu seperti vitamin, zat besi dan protein sangat penting untuk pertumbuhan rambut dan kesehatan.",
+            "dataset_id":3
+        },
+        {
+            "question":"Sebutkan 8 cara menyegarkan pikiran saat kuliah atau di kantor?",
+            "reference_answer":"1. Melakukan latihan atau aktivitas fisik bisa merangsang tenaga dan menyegarkan pikiran. 2. Tertawa merupakan obat yang paling baik untuk melawan kebosanan, karena meningkatkan suasana hati (mood). 3. Melakukan latihan mental seperti melakukan mainan puzzle atau teka teki silang. 4. Melakukan sosialisasi, interaksi manusia bisa menjaga pikiran agar tetap segar. 5. Tidur siang sejenak, hal ini tidak hanya menyegarkan pikiran tapi bisa menjadi fondasi yang kuat dalam hal produktivitas. 6. Mencium sesuatu yang menyenangkan, aroma seperti dari lilin aromaterapi atau bau secangkir kopi panas. 7. Melakukan pemijatan, pijat adalah cara sempurna untuk meredakan ketegangan dan mengurangi stres. 8. Melamun, untuk jangka waktu singkat melamun bisa memberikan imajinasi dan menyegarkan pikiran.",
+            "dataset_id":4
+        },
+        {
+            "question":"Sebutkan 6 cara belanja (shopping) yang baik dan efektif?",
+            "reference_answer":"1. Buatlah list barang apa saja yang harus dibeli. 2. Utamakan kebutuhan daripada keinginan. 3. Bandingkan dulu komposisi, kualitas, dan kuantitas barang sebelum dibeli. 4. Jangan mudah tergiur barang-barang diskon 5. Teliti barang sebelum membeli. 6. Pilihlah mana barang yang yang bisa dibeli secara grosir atau eceran.",
+            "dataset_id":5
+        },
+        {
+            "question":"Jelaskan yang dimaksud dengan gaya hidup hedonism.",
+            "reference_answer":"Gaya hidup hedonis (hedonism) adalah suatu pola hidup yang aktivitasnya untuk mencari kesenangan hidup, seperti lebih banyak menghabiskan waktu diluar rumah, lebih banyak bermain, senang pada keramaian kota, senang membeli barang mahal yang disenanginya, serta selalu ingin menjadi pusat perhatian.",
+            "dataset_id":6
+        },
+        {
+            "question":"Apa yang anda ketahui mengenai cagar sejarah Candi Borobudur?",
+            "reference_answer":"Borobudur adalah sebuah candi Buddha yang terletak di Borobudur, Magelang, Jawa Tengah, Indonesia. Lokasi candi adalah kurang lebih 100 km di sebelah barat daya Semarang, 86 km di sebelah barat Surakarta, dan 40 km di sebelah barat laut Yogyakarta. Candi borobudur diyakini merupakan peninggalan kerajaan Dinasti Sailendra masa pemerintahan raja Samaratungga dari Kerajaan Mataram Kuno.",
+            "dataset_id":7
+        },
+        {
+            "question":"Sebutkan 7 sikap orang tua agar anak tidak salah memilih pergaulan?",
+            "reference_answer":"1. Membekali anak dengan bimbingan agama sedini mungkin agar anak mempunyai kontrol perilaku yang kuat dalam pergaulan. 2. Memberikan kasih sayang dan perhatian yang cukup baik dari keluarga maupun lingkungan sekitarnya. 3. Disaat anak mau keluar rumah biasakan untuk meminta ijin dan tanya kemana perginya. 4. Kenali bakat dan minat anak sehingga orangtua bisa menyalurkannya dalam hal-hal positif agar bakat tersalurkan dan anak tetap dalam pergaulan yang positif. 5. Jangan terlalu memberikan aturan yang ketat kepada anak. Dengan anak merasa terkekang dia akan mencari kebebasan di luar. 6. Jadilah sosok sahabat buat anak, dan janganlah menjadi sosok yang ditakuti. Dengan begitu anak bisa mencurahkan apa yang sebelumnya dilakukan. 7. Bila penyimpangannya masih kecil mulai lah menegur dengan halus agar remaja pun merasa dihargai.",
+            "dataset_id":8
+        },
+        {
+            "question":"Apa yang dimaksud dengan makanan 4 sehat 5 sempurna?",
+            "reference_answer":"Makanan 4 sehat 5 sempurna adalah konsep makanan sehat yang dikampanyekan pemerintah sejak tahun 1955. Dalam konsep 4 sehat 5 sempurna, makanan sehat adalah makanan yang mengandung 4 sumber nutrisi yaitu makanan pokok, lauk pauk, sayur-sayuran, buah-buahan, dan disempurnakan dengan susu. Jika dilihat dari kandungannya, makanan 4 sehat 5 sempurna adalah makanan yang mengandung karbohidrat, protein, mineral, vitamin, dan lemak tak jenuh.",
+            "dataset_id":9
+        },
+        {
+            "question":"Bagaimana hubungan berfikir positif terhadap pola hidup sehat?",
+            "reference_answer":"Otak merupakan bagian terpenting dari tubuh manusia. Segala aktivitas akan dikoordinasikan dengan otak sebelum dijalankan oleh bagian tubuh. Pikiran positif akan menghindarkan anda dari stres, meningkatkan rasa percaya diri serta menjaga kinerja organ tubuh lainnya tetap maksimal.",
+            "dataset_id":10
+        },
+        {
+            "question":"Sebutkan 5 manfaat olahraga bagi tubuh. (Termasuk bagi pikiran, otot dan organ tubuh) ",
+            "reference_answer":"-Mengurangi stress - Membentuk otot tubuh dan mengencangkan otot - Membakar lemak - Menghindarkan dari penyakit - Membuat organ tubuh lebih sehat - Meningkatkan stamina - Menghindari penuaan dini",
+            "dataset_id":11
+        },
+        {
+            "question":"Apa yang anda ketahui mengenai PSSI? (Termasuk pengertian, organisasi yang tergabung dan ketua umum saat ini) ",
+            "reference_answer":"PSSI adalah Persatuan Sepak Bola Seluruh Indonesia, organisasi induk yang bertugas mengatur kegiatan olahraga sepak bola di Indonesia. PSSI bergabung dengan FIFA dan dengan AFC. PSSI menggelar kompetisi Liga Indonesia setiap tahunnya, dan Piala Indonesia. Ketua Umum PSSI sekarang adalah La Nyalla Mattalitti.",
+            "dataset_id":12
+        },
+        {
+            "question":"Apa yang anda kethaui mengenai Rio Haryanto? (Termasuk tempat lahir, tim saat ini dan awal karir) ",
+            "reference_answer":"Rio Haryanto lahir di Solo, Jawa Tengah. Rio merupakan seorang pebalap berkebangsaan Indonesia yang kini membalap di ajang Formula One (F1). Rio bergabung dengan tim Manor Racing. Rio adalah pembalap Indonesia pertama yang masuk Formula One (F1). Rio mengawali karir di balap gokart pada tahun 2002 dengan Juara Nasional Gokart kelas kadet.",
+            "dataset_id":13
+        },
+        {
+            "question":"Apakah yang dimaksud dengan block dalam permainan bola voli dan posisi apa yang biasanya melakukan hal tersebut? ",
+            "reference_answer":"Block adalah upaya menggagalkan serangan (smash) dari pihak lawan dengan cara membendung bola di atas jaring sambil meloncat (biasanya menggunakan kedua tangan). Block dilakukan pada posisi sebagai libero.",
+            "dataset_id":14
+        },
+        {
+            "question":"Sebutkan beberapa kondisi untuk dilakukannya kick off dalam sepak bola. (Sebutkan minimal 3) ",
+            "reference_answer":"-Memulai pertandingan - Terjadinya gol - Memulai babak kedua - Memulai babak perpanjangan waktu",
+            "dataset_id":15
+        },
+        {
+            "question":"Apa yang anda ketahui mengenai Cristiano Ronaldo? (lahir, kebangsaan, klub saat ini, klub sebelum, nomor punggung dan sebutannya) ",
+            "reference_answer":"Cristiano Ronaldo lahir di Portugal, 5 Februari 1985. Cristiano Ronaldo dapat berposisi sebagai sayap kiri atau kanan serta penyerang tengah. Saat ini ia bermain untuk tim Spanyol, Real Madrid dan untuk tim nasional Portugal. Sebelunya, ia pernah bermain di Sporting Lisboa dan Manchester United. Cristiano Ronaldo kerap bernomor punggung 7 hingga mendapat sebutanan CR7.",
+            "dataset_id":16
+        },
+        {
+            "question":"Sebutkan dan jelaskan secara singkat 4 jenis pemain yang ada dalam sepak bola. ",
+            "reference_answer":"-Goal Keeper (penjaga gawang) merupakan pemain sepak bola untuk menangkap (membendung) bola sebelum masuk ke gawang. - Defender bertugas untuk melindungi kiper saat lawan menguasai bola, mencegah serangan lawan dan memblok tembakan pemain lawan. - Gelandang adalah pemain yang membawa bola hingga ke depan saat melakukan serangan dan mencegah serangan lawan sampai ke daerah pertahanan. - Peyerang (forwards) adalah pemain yang bertugas mencetak gol dan membobol pertahanan lawan. Dibutuhkan kelincahan, kecepatan, akurasi tembakan yang baik.",
+            "dataset_id":17
+        },
+        {
+            "question":"Apa saja yang harus diperhatikan saat memilih kolam renang yang baik? (Sebutkan minimal 3) ",
+            "reference_answer":"-Kualitas air. Pilih air yang bersih dan tidak berbau - Peralatan keselamatan yang ada - Bentuk dan kedalaman kolam renang - Memperhatikan pengguna kolam renang. Pilih yang tidak berbaur antara pria dan wanita",
+            "dataset_id":18
+        },
+        {
+            "question":"Sebutkan 5 partai yang biasa dilombakan dalam bulu tangkis. ",
+            "reference_answer":"-Tunggal putra - Tunggal putri - Ganda putra - Ganda putri - Ganda campuran",
+            "dataset_id":19
+        },
+        {
+            "question":"Apa yang dimaksud dengan parkour? (pengertian, dan tempat-tempat biasa melakukan parkour) ",
+            "reference_answer":"Parkour adalah aktivitas atau olahraga yang dilakukan oleh sesorang atau kelompok tertentu untuk berpindah dari satu tempat ke tempat lainnya, dengan efisien dan cepat menggunakan kemampuan yang ada pada manusia (berlari, lompat, menggantung). Parkour biasanya dilakukan di atas gedung, bangunan penuh halangan bertembok, pohon dan daerah berbatu.",
+            "dataset_id":20
+        },
+        {
+            "question":"Jelaskan fungsi partai politik, berkaitan dengan kekuasaan pemerintahan. (Usahakan jawab dalam 2-4 kalimat) ",
+            "reference_answer":"Partai politik sebagai organisasi resmi untuk menyalurkan aspirasi masyarakat. Partai politik memiliki kekuatan politik, serta ikut menentukan proses pembentukan kekuasaan pemerintah secara legal (diakui hukum) juga mempunyai hak beraktifitas merebut dan mempertahankan kekuasaan politik.",
+            "dataset_id":21
+        },
+        {
+            "question":"Tuliskan isi teks asli proklamasi dengan ejaan yang telah disempurnakan. ",
+            "reference_answer":"Proklamasi Kami bangsa Indonesia dengan ini menyatakan kemerdekaan Indonesia. Hal-hal yang mengenai pemindahan kekuasaan d.l.l., diselenggarakan dengan cara seksama dan dalam tempo yang sesingkat-singkatnya. Jakarta, 17 - 8 - 05 Wakil-wakil bangsa Indonesia.",
+            "dataset_id":22
+        },
+        {
+            "question":"Apa yang anda ketahui mengenai kerajaan Majapahit? (Mengenai tempat, masa puncak kejayaan dan agama. Usahakan jawab dalam 2-4 kalimat) ",
+            "reference_answer":"Majapahit adalah sebuah kerajaan yang berpusat di Jawa Timur, Indonesia. Kerajaan ini mencapai puncak kejayaannya dan menguasai wilayah di Nusantara pada masa kekuasaan Hayam Wuruk. Kerajaan Majapahit merupakan kerajaan Hindu - Budha terbesar dalam sejarah Indonesia.",
+            "dataset_id":23
+        },
+        {
+            "question":"Sebutkan 5 butir sila Pancasila. ",
+            "reference_answer":"- Ketuhanan Yang Maha Esa, - kemanusiaan yang adil dan beradab, - persatuan Indonesia, - kerakyatan yang dipimpin oleh hikmat kebijaksanaan dalam permusyawaratan perwakilan, - keadilan sosial bagi seluruh rakyat Indonesia",
+            "dataset_id":24
+        },
+        {
+            "question":"Apa yang anda ketahui mengenai Negara Demokrasi? (Mengenai pengertian, peran rakyat dan mencakup bidang apa saja. Usahakan jawab dalam 2-4 kalimat) ",
+            "reference_answer":"Negara demokrasi adalah suatu negara yang pemerintahannya dipegang oleh rakyat dan rakyat memiliki kedaulatan tertinggi. Demokrasi mengizinkan warga negara berpartisipasi baik secara langsung atau melalui perwakilan dalam perumusan, pengembangan, dan pembuatan hukum. Demokrasi mencakup kondisi sosial, ekonomi, dan budaya yang memungkinkan adanya praktik kebebasan politik secara bebas dan setara.",
+            "dataset_id":25
+        },
+        {
+            "question":"Jelaskan pengertian masyarakat madani. ",
+            "reference_answer":"Masyarakat madani adalah masyarakat yang beradab, menjunjung tinggi nilai-nilai kemanusiaan, yang maju dalam penguasaan ilmu pengetahuan, dan teknologi.",
+            "dataset_id":26
+        },
+        {
+            "question":"Apa perbedaan hukum perdata dan hukum pidana? ",
+            "reference_answer":"Hukum perdata adalah hukum yang mengatur hubungan antara individu dengan individu, fokus dari hukum perdata adalah kepentingan personal atau kepentingan individu (seperti hak waris, harta gono gini). Hukum pidana adalah hukum tertulis yang mengatur tentang perbuatan yang dilarang (pelanggaran, kriminal).",
+            "dataset_id":27
+        },
+        {
+            "question":"Apa yang anda ketahui mengenai MEA? (Usahakan jawab dalam 2-4 kalimat) ",
+            "reference_answer":"MEA (Masyarakat Ekonomi Asean) adalah sistem ekonomi negara-negara ASEAN yang bertujuan untuk menghilangkan hambatan di dalam melakukan kegiatan ekonomi lintas kawasan, misalnya dalam perdagangan barang, jasa, dan investasi (perdagangan bebas antarnegara-negara ASEAN). MEA dirancang untuk mewujudkan Wawasan ASEAN 2020.",
+            "dataset_id":28
+        },
+        {
+            "question":"Apa yang dimaksud dengan pengakuan de facto suatu negara? (Sebutkan juga unsur negara yang harus ada agar diakui). ",
+            "reference_answer":"Pengertian pengakuan de facto adalah pengakuan yang diberikan oleh suatu negara kepada negara lain yang telah memenuhi unsur-unsur negara, seperti ada pemimpin, rakyat dan wilayahnya.",
+            "dataset_id":29
+        },
+        {
+            "question":"Sebutkan 10 anggota ASEAN yang anda ketahui. ",
+            "reference_answer":"Indonesia, Thailand, Malaysia, Singapura, Filipina, Brunei Darussalam, Vietnam, Laos, Myanmar dan Kamboja.",
+            "dataset_id":30
+        },
+        {
+            "question":"Apa yang dimaksud dengan komputer? (Jawab dalam 1-3 kalimat) ",
+            "reference_answer":"Komputer adalah rangkaian mesin elektronik yang dapat bekerja sama. Sistem ini digunakan untuk memudahkan pekerjaan manusia. Komputer bekerja otomatis berdasarkan urutan instruksi atau program yang diberikan.",
+            "dataset_id":31
+        },
+        {
+            "question":"Sebutkan keuntungan-keuntungan yang bisa diperoleh dari penerapan teknologi dalam kegiatan bisnis? (Sebutkan minimal 3) ",
+            "reference_answer":"- Memperluas pemasaran sehingga tidak mempermasalahkan jarak dan waktu - Mengurangi biaya produksi, promosi - Mempermudah penyimpanan data penjualan, data barang maupun laporan keuangan - Menggantikan pekerjaan manual menjadi otomatis - Proses produksi lebih cepat dan praktis",
+            "dataset_id":32
+        },
+        {
+            "question":"Jelaskan yang dimaksud dengan hardware dan berikan contohnya (minimal 5). ",
+            "reference_answer":"Hardware (perangkat keras) adalah suatu komponen yang ada pada komputer, bisa dilihat secara kasat mata dan dapat disentuh secara fisik. Contoh : mouse, monitor, keyboard, printer, kamera, cpu, kabel, router, bridge, hub.",
+            "dataset_id":33
+        },
+        {
+            "question":"Apa perbedaan dari data, informasi dan pengetahuan? ",
+            "reference_answer":"Data merupakan rangkaian fakta yang mewakili suatu kejadian, atau dapat di sebut dengan simbol yang terekam. Informasi adalah makna yang dapat di tafsirkan dari data. Pengetahuan adalah informasi yang telah dimaknai sehingga dapat digunakan untuk meningkatkan pengertian atau pemahaman.",
+            "dataset_id":34
+        },
+        {
+            "question":"Bagaimana cara mengatasi sampah elektronik (e-waste)? (Sebutkan minimal 3) ",
+            "reference_answer":"- Mendaur ulang sampah elektronik menjadi barang yang berguna dan memiliki nilai jual - Memisahkan barang elektronik sesuai komposisi bahannya - tidak membuang sembarangan sehingga karena dapat mencemari lingkungan - Dikembalikan kepada produsen elektronik",
+            "dataset_id":35
+        },
+        {
+            "question":"Apa yang dimaksud dengan volatile memory? ",
+            "reference_answer":"Volatile memory adalah memory yang datanya dapat ditulis dan dihapus, tetapi hilang saat kehilangan power (kondisi off atau mati lampu).",
+            "dataset_id":36
+        },
+        {
+            "question":"Apa kepanjangan dari LCD, CPU dan GPS? ",
+            "reference_answer":"LCD (Liquid Crystal Display), CPU (Central Processing Unit), GPS (Global Positioning System)",
+            "dataset_id":37
+        },
+        {
+            "question":"Sebutkan nama versi android dari Cupcake hingga saat ini. ",
+            "reference_answer":"Cupcake, Donut, Eclair, Froyo, Gingerbread, Honeycomb, Ice Cream Sandwich, Jelly Bean, KitKat dan Lolypop.",
+            "dataset_id":38
+        },
+        {
+            "question":"Apa yang dimaksud topologi jaringan LAN dan sebutkan contoh topologi tersebut (minimal 3). ",
+            "reference_answer":"Topologi jaringan adalah struktur jaringan fisik yang digunakan untuk implementasi LAN (local area network). Unsur dasar penyusun jaringan, yaitu node, link, dan station. Contoh Topologi bintang (star) , Topologi cincin (ring) , Topologi bus, Topologi pohon (tree), Topologi linier",
+            "dataset_id":39
+        },
+        {
+            "question":"Apa yang dimaksud dengan Bluetooth? ",
+            "reference_answer":"Bluetooth adalah perangkat yang menjadi media tukar menukar (menerima mengirim) informasi di antara peralatan eketronik. Bluetooth merupakan media tanpa kabel. Biasanya bluethooth digunakan untuk mengirim foto atau file antar handphone.",
+            "dataset_id":40
+        }
+    ],
+  "cross-prompt": [
+        {
+            "question":"Deskripsikan 4 manfaat telur untuk kesehatan?",
+            "reference_answer":"1. Bermanfaat untuk pasien kemoterapi Karena kandungan protein yang tinggi , putih telur sangat disarankan untuk kemoterapi dan pasien ginjal. 2. Masker wajah Putih telur juga banyak digunakan untuk masker wajah, dimana diyakini dapat mengenyalkan, serta mencerahkan kulit. 3. Kekebalan tubuh dan kesehatan mata Secara keseluruhan , telur baik untuk menjaga sistem kekebalan tubuh, dan telah digunakan untuk mengobati katarak , degenerasi makula dan membantu untuk membangun tulang yang kuat. 4. Membantu diet Karena putih telur tinggi protein, maka ia bisa menggantikan kebutuhan karbohidrat bagi yang sedang diet menurunkan berat badan. Manfaat protein termasuk juga bisa menggantikan fungsi karbohidrat untuk energi.",
+            "dataset_id":2
+        },
+        {
+            "question":"Apa yang anda ketahui mengenai PSSI? (Termasuk pengertian, organisasi yang tergabung dan ketua umum saat ini) ",
+            "reference_answer":"PSSI adalah Persatuan Sepak Bola Seluruh Indonesia, organisasi induk yang bertugas mengatur kegiatan olahraga sepak bola di Indonesia. PSSI bergabung dengan FIFA dan dengan AFC. PSSI menggelar kompetisi Liga Indonesia setiap tahunnya, dan Piala Indonesia. Ketua Umum PSSI sekarang adalah La Nyalla Mattalitti.",
+            "dataset_id":12
+        },
+        {
+            "question":"Tuliskan isi teks asli proklamasi dengan ejaan yang telah disempurnakan. ",
+            "reference_answer":"Proklamasi Kami bangsa Indonesia dengan ini menyatakan kemerdekaan Indonesia. Hal-hal yang mengenai pemindahan kekuasaan d.l.l., diselenggarakan dengan cara seksama dan dalam tempo yang sesingkat-singkatnya. Jakarta, 17 - 8 - 05 Wakil-wakil bangsa Indonesia.",
+            "dataset_id":22
+        },
+        {
+            "question":"Sebutkan keuntungan-keuntungan yang bisa diperoleh dari penerapan teknologi dalam kegiatan bisnis? (Sebutkan minimal 3) ",
+            "reference_answer":"- Memperluas pemasaran sehingga tidak mempermasalahkan jarak dan waktu - Mengurangi biaya produksi, promosi - Mempermudah penyimpanan data penjualan, data barang maupun laporan keuangan - Menggantikan pekerjaan manual menjadi otomatis - Proses produksi lebih cepat dan praktis",
+            "dataset_id":32
+        }
+    ]
+}
