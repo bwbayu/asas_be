@@ -1,5 +1,4 @@
-from .modeling_direct_specific import DirectSpecific
-from .modeling_direct_cross import DirectCross
+from .modeling_direct import DirectModel
 from transformers import BertTokenizer
 import torch
 import warnings
@@ -10,8 +9,8 @@ import boto3
 warnings.simplefilter("ignore")
 MODEL_NAME = 'indobenchmark/indobert-lite-base-p2'
 tokenizer = BertTokenizer.from_pretrained(MODEL_NAME)
-model_specific = DirectSpecific(MODEL_NAME)
-model_cross = DirectCross(MODEL_NAME)
+model_specific = DirectModel(MODEL_NAME)
+model_cross = DirectModel(MODEL_NAME)
 
 # download model from s3
 S3_BUCKET = "model-asas-bucket"

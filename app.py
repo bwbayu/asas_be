@@ -18,6 +18,10 @@ with open(ANSWER_PATH, 'r', encoding='utf-8') as f:
 def validate_input(text: str) -> bool:
     return bool(text and text.strip())
 
+@app.get('/')
+def main():
+    return "Hello bayu"
+
 @app.get('/questions')
 def get_questions():
     scenario = request.args.get('scenario')

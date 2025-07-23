@@ -1,24 +1,23 @@
-from .modeling_direct_specific import DirectSpecific
-from .modeling_direct_cross import DirectCross
-from transformers import BertTokenizer
+from .modeling_direct import DirectModel
+from transformers import BertTokenizer, AutoTokenizer
 import torch
 import warnings
 import regex as re
 import os
 
 warnings.simplefilter("ignore")
-MODEL_NAME = 'indobenchmark/indobert-lite-base-p2'
-tokenizer = BertTokenizer.from_pretrained(MODEL_NAME)
-model_specific = DirectSpecific(MODEL_NAME)
-model_cross = DirectCross(MODEL_NAME)
+MODEL_NAME = 'google-bert/bert-base-multilingual-cased'
+tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+model_specific = DirectModel(MODEL_NAME).to('cuda')
+model_cross = DirectModel(MODEL_NAME).to('cuda')
 
 # Load weight ke model
 BASE_DIR = os.path.dirname(__file__)
-checkpoint_specific = torch.load(os.path.join(BASE_DIR, 'model', 'model_1.pt'), map_location='cpu')
+checkpoint_specific = torch.load(os.path.join(BASE_DIR, 'model', 'model_2s.pt'), map_location='cuda')
 model_specific.load_state_dict(checkpoint_specific)
 model_specific.eval()
 
-checkpoint_cross = torch.load(os.path.join(BASE_DIR, 'model', 'model_10.pt'), map_location='cpu')
+checkpoint_cross = torch.load(os.path.join(BASE_DIR, 'model', 'model_2c.pt'), map_location='cuda')
 model_cross.load_state_dict(checkpoint_cross)
 model_cross.eval()
 
@@ -44,15 +43,11 @@ def get_score_direct(answer: str, reference: str, scenario: str):
             return_tensors='pt'
         )
 
+    inputs = {k: v.to('cuda') for k, v in inputs.items()}
     with torch.no_grad():
-        model = models[scenario]
+        model = models[scenario].to('cuda')
         predictions = model(**inputs).squeeze(1)
         score = torch.clamp(predictions, 0, 1)
         return round(score.item(), 2)
     
     return 0
-
-# print(get_score_direct("Buah mengandung banyak vitamin seperti vitamin C yang bisa meningkatkan sistem imun, jadi tubuh tidak mudah sakit.", "Mengonsumsi buah membantu menjaga daya tahan tubuh karena kaya akan vitamin, mineral, dan antioksidan yang dibutuhkan tubuh.", "specific-prompt"))
-# print(get_score_direct("Buah itu penting karena bisa bikin kenyang dan segar, jadi kita nggak perlu makan makanan berat.", "Mengonsumsi buah membantu menjaga daya tahan tubuh karena kaya akan vitamin, mineral, dan antioksidan yang dibutuhkan tubuh.", "specific-prompt"))
-# print(get_score_direct("Makan buah bisa bikin tubuh jadi kurus karena buah mengandung banyak lemak yang dibakar saat tidur.", "Mengonsumsi buah membantu menjaga daya tahan tubuh karena kaya akan vitamin, mineral, dan antioksidan yang dibutuhkan tubuh.", "specific-prompt"))
-# print(get_score_direct("kami bangsa indonesia dengan ini menyatakan kemerdekaannya hal hal yang mengenai pemindahan kekuasaan dan lain lain di selenggarakan dengan cara seksama dan dengan tempo yang sesingkat singkatnya", "proklamasi kami bangsa indonesia dengan ini menyatakan kemerdekaan indonesia hal hal yang mengenai pemindahan kekuasaan d l l diselenggarakan dengan cara seksama dan dalam tempo yang sesingkat singkatnya jakarta 17 8 05 wakil wakil bangsa indonesia", "specific-prompt"))
