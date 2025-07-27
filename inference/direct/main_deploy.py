@@ -9,8 +9,7 @@ import boto3
 warnings.simplefilter("ignore")
 MODEL_NAME = 'indobenchmark/indobert-lite-base-p2'
 tokenizer = BertTokenizer.from_pretrained(MODEL_NAME)
-model_specific = DirectModel(MODEL_NAME)
-model_cross = DirectModel(MODEL_NAME)
+model = DirectModel(MODEL_NAME)
 
 # download model from s3
 S3_BUCKET = "model-asas-bucket"
@@ -28,22 +27,11 @@ def download_model_from_s3(model_key: str, local_filename: str):
     return local_path
 
 model_specific_path = download_model_from_s3("model_direct/model_1.pt", "model_1.pt")
-model_cross_path = download_model_from_s3("model_direct/model_10.pt", "model_10.pt")
 
 # Load weight ke model
-
 checkpoint_specific = torch.load(model_specific_path, map_location='cpu')
-model_specific.load_state_dict(checkpoint_specific)
-model_specific.eval()
-
-checkpoint_cross = torch.load(model_cross_path, map_location='cpu')
-model_cross.load_state_dict(checkpoint_cross)
-model_cross.eval()
-
-models = {
-    "specific-prompt": model_specific,
-    "cross-prompt": model_cross
-}
+model.load_state_dict(checkpoint_specific)
+model.eval()
 
 def preprocess_text(text):
     text = text.lower()  # Ubah ke lowercase
@@ -63,7 +51,6 @@ def get_score_direct(answer: str, reference: str, scenario: str):
         )
 
     with torch.no_grad():
-        model = models[scenario]
         predictions = model(**inputs).squeeze(1)
         score = torch.clamp(predictions, 0, 1)
         return round(score.item(), 2)
