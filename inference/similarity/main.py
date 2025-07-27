@@ -1,5 +1,4 @@
-from .modeling_similarity_specific import SimilaritySpecific
-from .modeling_similarity_cross import SimilarityCross
+from .modeling_similarity import SimilaritySpecific
 from transformers import AutoTokenizer
 import torch.nn.functional as F
 import torch
@@ -11,19 +10,13 @@ import os
 warnings.simplefilter("ignore")
 MODEL_NAME = 'sentence-transformers/distiluse-base-multilingual-cased-v2'
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
-model_specific = SimilaritySpecific(MODEL_NAME)
-model_cross = SimilarityCross(MODEL_NAME)
+model = SimilaritySpecific(MODEL_NAME)
 
 BASE_DIR = os.path.dirname(__file__)
 checkpoint_specific = torch.load(os.path.join(BASE_DIR, 'model', 'model_0.pt'), map_location='cpu')
 reg_model_specific = joblib.load(os.path.join(BASE_DIR, 'model', 'reg_0.pkl'))
-model_specific.load_state_dict(checkpoint_specific)
-model_specific.eval()
-
-checkpoint_cross = torch.load(os.path.join(BASE_DIR, 'model', 'model_1.pt'), map_location='cpu')
-reg_model_cross = joblib.load(os.path.join(BASE_DIR, 'model', 'reg_1.pkl'))
-model_cross.load_state_dict(checkpoint_cross)
-model_cross.eval()
+model.load_state_dict(checkpoint_specific)
+model.eval()
 
 def preprocess_text(text):
     text = text.lower()  # Ubah ke lowercase
@@ -31,19 +24,7 @@ def preprocess_text(text):
     text = ' '.join(text.split())  # Hapus spasi berlebih
     return text
 
-registry = {
-    "specific-prompt": {
-        "model": model_specific,
-        "reg_model": reg_model_specific
-    },
-    "cross-prompt": {
-        "model": model_cross,
-        "reg_model": reg_model_cross
-    }
-}
-
-
-def get_score_similarity(answer: str, reference: str, scenario: str):
+def get_score_similarity(answer: str, reference: str):
     encoding_reference = tokenizer.encode_plus(
         preprocess_text(reference),
         max_length=512,
@@ -61,8 +42,8 @@ def get_score_similarity(answer: str, reference: str, scenario: str):
     )
 
     with torch.no_grad():
-        model = registry[scenario]["model"]
-        reg_model = registry[scenario]["reg_model"]
+        model = model
+        reg_model = reg_model_specific
 
         reference_emb = model(**encoding_reference)
         answer_emb = model(**encoding_answer)

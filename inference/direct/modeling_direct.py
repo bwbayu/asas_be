@@ -1,12 +1,13 @@
 import torch.nn as nn
-from transformers import AlbertConfig, AutoModel, AutoConfig
+from transformers import AlbertConfig
+from .modeling_albert_default import AlbertModel
 
 class DirectModel(nn.Module):
     def __init__(self, model_name='indobenchmark/indobert-lite-base-p2'):
         super().__init__()
         # Load pretrained model
-        self.config = AutoConfig.from_pretrained(model_name)
-        self.model = AutoModel.from_pretrained(model_name, config=self.config).to('cuda')
+        self.config = AlbertConfig.from_pretrained(model_name)
+        self.model = AlbertModel.from_pretrained(model_name, config=self.config)
         
         # Add regression layer
         self.dropout = nn.Dropout(p=0.3)

@@ -1,5 +1,4 @@
-from .modeling_similarity_specific import SimilaritySpecific
-from .modeling_similarity_cross import SimilarityCross
+from .modeling_similarity import SimilaritySpecific
 from transformers import AutoTokenizer
 import torch.nn.functional as F
 import torch
@@ -12,8 +11,7 @@ import boto3
 warnings.simplefilter("ignore")
 MODEL_NAME = 'sentence-transformers/distiluse-base-multilingual-cased-v2'
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
-model_specific = SimilaritySpecific(MODEL_NAME)
-model_cross = SimilarityCross(MODEL_NAME)
+model = SimilaritySpecific(MODEL_NAME)
 
 # download model from s3
 S3_BUCKET = "model-asas-bucket"
@@ -32,36 +30,17 @@ def download_model_from_s3(model_key: str, local_filename: str):
 
 model_specific_path = download_model_from_s3("model_sim/model_0.pt", "model_0.pt")
 pkl_specific_path = download_model_from_s3("model_sim/reg_0.pkl", "reg_0.pkl")
-model_cross_path = download_model_from_s3("model_sim/model_1.pt", "model_1.pt")
-pkl_cross_path = download_model_from_s3("model_sim/reg_1.pkl", "reg_1.pkl")
 
 checkpoint_specific = torch.load(model_specific_path, map_location='cpu')
 reg_model_specific = joblib.load(pkl_specific_path)
-model_specific.load_state_dict(checkpoint_specific)
-model_specific.eval()
-
-checkpoint_cross = torch.load(model_cross_path, map_location='cpu')
-reg_model_cross = joblib.load(pkl_cross_path)
-model_cross.load_state_dict(checkpoint_cross)
-model_cross.eval()
+model.load_state_dict(checkpoint_specific)
+model.eval()
 
 def preprocess_text(text):
     text = text.lower()  # Ubah ke lowercase
     text = re.sub(r"[^a-zA-Z0-9\s]", ' ', text)  # Hapus karakter khusus
     text = ' '.join(text.split())  # Hapus spasi berlebih
     return text
-
-registry = {
-    "specific-prompt": {
-        "model": model_specific,
-        "reg_model": reg_model_specific
-    },
-    "cross-prompt": {
-        "model": model_cross,
-        "reg_model": reg_model_cross
-    }
-}
-
 
 def get_score_similarity(answer: str, reference: str, scenario: str):
     encoding_reference = tokenizer.encode_plus(
@@ -81,8 +60,8 @@ def get_score_similarity(answer: str, reference: str, scenario: str):
     )
 
     with torch.no_grad():
-        model = registry[scenario]["model"]
-        reg_model = registry[scenario]["reg_model"]
+        model = model
+        reg_model = reg_model_specific
 
         reference_emb = model(**encoding_reference)
         answer_emb = model(**encoding_answer)
