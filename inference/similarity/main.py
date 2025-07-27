@@ -42,7 +42,6 @@ def get_score_similarity(answer: str, reference: str):
     )
 
     with torch.no_grad():
-        model = model
         reg_model = reg_model_specific
 
         reference_emb = model(**encoding_reference)

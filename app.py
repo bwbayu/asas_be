@@ -24,14 +24,12 @@ def main():
 
 @app.get('/questions')
 def get_questions():
-    scenario = request.args.get('scenario')
-    return jsonify(PROMPTS.get(scenario, []))
+    return jsonify(PROMPTS.get('specific-prompt', []))
 
 @app.get('/student_answer')
 def get_student_answer():
-    scenario = request.args.get('scenario')
     dataset_id = request.args.get('dataset_id')
-    scenario_data = ANSWERS.get(scenario, [])
+    scenario_data = ANSWERS.get('specific-prompt', [])
     first_entry = scenario_data[0] if scenario_data else {}
     return jsonify(first_entry.get(dataset_id, []))
 
@@ -40,15 +38,17 @@ def predict():
     data = request.get_json()
     answer = data.get('answer', '')
     reference = data.get('reference', '')
-    scenario = data.get('scenario', '')
-
+    
     # validate empty string
-    if not all([validate_input(answer), validate_input(reference), validate_input(scenario)]):
+    if not all([validate_input(answer), validate_input(reference)]):
+        return jsonify({'error': 'Missing input'}), 400
+    
+    if(answer == '' or reference == ''):
         return jsonify({'error': 'Missing input'}), 400
     
     # get score
-    direct_score = get_score_direct(answer, reference, scenario)
-    similarity_score = get_score_similarity(answer, reference, scenario)
+    direct_score = get_score_direct(answer, reference)
+    similarity_score = get_score_similarity(answer, reference)
 
     return jsonify({'direct_score': round(float(direct_score), 2), 'similarity_score': round(float(similarity_score), 2)})
 

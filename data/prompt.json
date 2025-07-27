@@ -200,27 +200,5 @@
             "reference_answer":"Bluetooth adalah perangkat yang menjadi media tukar menukar (menerima mengirim) informasi di antara peralatan eketronik. Bluetooth merupakan media tanpa kabel. Biasanya bluethooth digunakan untuk mengirim foto atau file antar handphone.",
             "dataset_id":40
         }
-    ],
-  "cross-prompt": [
-        {
-            "question":"Deskripsikan 4 manfaat telur untuk kesehatan?",
-            "reference_answer":"1. Bermanfaat untuk pasien kemoterapi Karena kandungan protein yang tinggi , putih telur sangat disarankan untuk kemoterapi dan pasien ginjal. 2. Masker wajah Putih telur juga banyak digunakan untuk masker wajah, dimana diyakini dapat mengenyalkan, serta mencerahkan kulit. 3. Kekebalan tubuh dan kesehatan mata Secara keseluruhan , telur baik untuk menjaga sistem kekebalan tubuh, dan telah digunakan untuk mengobati katarak , degenerasi makula dan membantu untuk membangun tulang yang kuat. 4. Membantu diet Karena putih telur tinggi protein, maka ia bisa menggantikan kebutuhan karbohidrat bagi yang sedang diet menurunkan berat badan. Manfaat protein termasuk juga bisa menggantikan fungsi karbohidrat untuk energi.",
-            "dataset_id":2
-        },
-        {
-            "question":"Apa yang anda ketahui mengenai PSSI? (Termasuk pengertian, organisasi yang tergabung dan ketua umum saat ini) ",
-            "reference_answer":"PSSI adalah Persatuan Sepak Bola Seluruh Indonesia, organisasi induk yang bertugas mengatur kegiatan olahraga sepak bola di Indonesia. PSSI bergabung dengan FIFA dan dengan AFC. PSSI menggelar kompetisi Liga Indonesia setiap tahunnya, dan Piala Indonesia. Ketua Umum PSSI sekarang adalah La Nyalla Mattalitti.",
-            "dataset_id":12
-        },
-        {
-            "question":"Tuliskan isi teks asli proklamasi dengan ejaan yang telah disempurnakan. ",
-            "reference_answer":"Proklamasi Kami bangsa Indonesia dengan ini menyatakan kemerdekaan Indonesia. Hal-hal yang mengenai pemindahan kekuasaan d.l.l., diselenggarakan dengan cara seksama dan dalam tempo yang sesingkat-singkatnya. Jakarta, 17 - 8 - 05 Wakil-wakil bangsa Indonesia.",
-            "dataset_id":22
-        },
-        {
-            "question":"Sebutkan keuntungan-keuntungan yang bisa diperoleh dari penerapan teknologi dalam kegiatan bisnis? (Sebutkan minimal 3) ",
-            "reference_answer":"- Memperluas pemasaran sehingga tidak mempermasalahkan jarak dan waktu - Mengurangi biaya produksi, promosi - Mempermudah penyimpanan data penjualan, data barang maupun laporan keuangan - Menggantikan pekerjaan manual menjadi otomatis - Proses produksi lebih cepat dan praktis",
-            "dataset_id":32
-        }
     ]
 }
