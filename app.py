@@ -53,4 +53,4 @@ def predict():
     return jsonify({'direct_score': round(float(direct_score), 2), 'similarity_score': round(float(similarity_score), 2)})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(debug=True)
