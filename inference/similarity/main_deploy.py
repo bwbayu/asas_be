@@ -42,7 +42,7 @@ def preprocess_text(text):
     text = ' '.join(text.split())  # Hapus spasi berlebih
     return text
 
-def get_score_similarity(answer: str, reference: str, scenario: str):
+def get_score_similarity(answer: str, reference: str):
     encoding_reference = tokenizer.encode_plus(
         preprocess_text(reference),
         max_length=512,

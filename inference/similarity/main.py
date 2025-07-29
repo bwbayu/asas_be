@@ -13,7 +13,7 @@ tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
 model = SimilaritySpecific(MODEL_NAME)
 
 BASE_DIR = os.path.dirname(__file__)
-checkpoint_specific = torch.load(os.path.join(BASE_DIR, 'model', 'model_0.pt'), map_location='cpu')
+checkpoint_specific = torch.load(os.path.join(BASE_DIR, 'model', 'model_0.pt'),  map_location=torch.device('cpu'))
 reg_model_specific = joblib.load(os.path.join(BASE_DIR, 'model', 'reg_0.pkl'))
 model.load_state_dict(checkpoint_specific)
 model.eval()

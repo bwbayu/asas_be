@@ -12,7 +12,7 @@ model = DirectModel(MODEL_NAME)
 
 # Load weight ke model
 BASE_DIR = os.path.dirname(__file__)
-checkpoint_specific = torch.load(os.path.join(BASE_DIR, 'model', 'model_1.pt'))
+checkpoint_specific = torch.load(os.path.join(BASE_DIR, 'model', 'model_1.pt'),  map_location=torch.device('cpu'))
 model.load_state_dict(checkpoint_specific)
 model.eval()
 

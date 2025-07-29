@@ -39,7 +39,7 @@ def preprocess_text(text):
     text = ' '.join(text.split())  # Hapus spasi berlebih
     return text
 
-def get_score_direct(answer: str, reference: str, scenario: str):
+def get_score_direct(answer: str, reference: str):
     inputs = tokenizer.encode_plus(
             preprocess_text(reference),
             preprocess_text(answer),
