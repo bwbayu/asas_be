@@ -9,8 +9,6 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-ENV FLASK_APP=app.py
+EXPOSE 8000
 
-EXPOSE 5000
-
-CMD [ "flask", "run", "--host=0.0.0.0" ]
+CMD [ "gunicorn", "-w", "1", "-b", "0.0.0.0:8000", "app:app", "--access-logfile", "-", "--timeout", "120"]

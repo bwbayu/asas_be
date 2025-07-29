@@ -4,4 +4,4 @@ transformers==4.48.0
 sentence_transformers==3.4.1
 joblib
 boto3
-uvicorn
+gunicorn
