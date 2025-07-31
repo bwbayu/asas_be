@@ -6,7 +6,7 @@ data = {
     'reference': "gatau"
 }
 
-url = 'http://localhost:5001/score'
+url = 'http://localhost:81/score'
 headers = {'Content-Type': 'application/json'}  # Add this header
 response = requests.post(url, data=json.dumps(data), headers=headers)
 print(response.json())

@@ -13,7 +13,7 @@ model = DirectModel(MODEL_NAME)
 
 # download model from s3
 S3_BUCKET = "model-asas-bucket"
-MODEL_DIR = "model_direct"
+MODEL_DIR = "/tmp/model_direct"
 
 def download_model_from_s3(model_key: str, local_filename: str):
     os.makedirs(MODEL_DIR, exist_ok=True)
@@ -29,7 +29,7 @@ def download_model_from_s3(model_key: str, local_filename: str):
 model_specific_path = download_model_from_s3("model_direct/model_1.pt", "model_1.pt")
 
 # Load weight ke model
-checkpoint_specific = torch.load(model_specific_path, map_location='cpu')
+checkpoint_specific = torch.load(model_specific_path,  map_location=torch.device('cpu'))
 model.load_state_dict(checkpoint_specific)
 model.eval()
 

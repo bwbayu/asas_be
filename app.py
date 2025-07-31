@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from inference.direct.main import get_score_direct
-from inference.similarity.main import get_score_similarity
+from inference.direct.main_deploy import get_score_direct
+from inference.similarity.main_deploy import get_score_similarity
 import json, pathlib
 
 app = Flask(__name__)
@@ -52,5 +52,5 @@ def predict():
 
     return jsonify({'direct_score': round(float(direct_score), 2), 'similarity_score': round(float(similarity_score), 2)})
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)

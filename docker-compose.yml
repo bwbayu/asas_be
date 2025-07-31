@@ -1,0 +1,27 @@
+services:
+  asas-be:
+    container_name: asas-be
+    build:
+      context: .
+      dockerfile: Dockerfile
+    expose:
+      - 8000
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    env_file:
+      - .env
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "81:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      asas-be:
+        condition: service_healthy
+    restart: always
