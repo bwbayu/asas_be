@@ -4,12 +4,13 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: bwbayu/asas-be:v0
     expose:
-      - 8000
+      - 8080
     restart: always
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000"]
-      interval: 30s
+      test: ["CMD", "curl", "-f", "http://localhost:8080"]
+      interval: 60s
       timeout: 5s
       retries: 5
     env_file:
