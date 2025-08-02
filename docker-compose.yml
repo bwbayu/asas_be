@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: bwbayu/asas-be:v0
+    image: bwbayu/asas-be:v0.1
     expose:
       - 8080
     restart: always

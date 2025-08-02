@@ -19,7 +19,7 @@ fail_count = 0
 
 start_time = time.time()
 
-for _ in range(40):
+for _ in range(11):
     try:
         response = requests.post(url, data=json.dumps(data), headers=headers, timeout=10)
         if response.status_code == 200:

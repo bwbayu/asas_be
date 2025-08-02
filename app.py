@@ -3,9 +3,18 @@ from flask_cors import CORS
 from inference.direct.main_deploy import get_score_direct
 from inference.similarity.main_deploy import get_score_similarity
 import json, pathlib
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 
 app = Flask(__name__)
 CORS(app)
+
+# rate limiter
+limiter = Limiter(
+    get_remote_address,
+    app=app,
+    default_limits=["200 per day", "50 per hour", "10 per minute"]
+)
 
 DATA_PATH = pathlib.Path(__file__).parent / 'data' / 'prompt.json'
 with open(DATA_PATH, 'r', encoding='utf-8') as f:

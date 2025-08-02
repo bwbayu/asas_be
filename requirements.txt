@@ -5,3 +5,4 @@ sentence_transformers==3.4.1
 joblib
 boto3
 gunicorn
+flask-limiter
