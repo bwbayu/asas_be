@@ -6,7 +6,7 @@ import warnings
 import joblib
 import regex as re
 import os
-import boto3
+from google.cloud import storage
 
 warnings.simplefilter("ignore")
 MODEL_NAME = 'sentence-transformers/distiluse-base-multilingual-cased-v2'
@@ -14,22 +14,26 @@ tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
 model = SimilaritySpecific(MODEL_NAME)
 
 # download model from s3
-S3_BUCKET = "model-asas-bucket"
-MODEL_DIR = "/tmp/model_sim"
+GCS_BUCKET = os.getenv("GCS_BUCKET", "model-asas-demo")
+MODEL_DIR = "/tmp/model_similarity"
+GCS_BLOB_PT  = "model_similarity/model_0.pt"
+GCS_BLOB_PKL = "model_similarity/reg_0.pkl"
 
-def download_model_from_s3(model_key: str, local_filename: str):
+def download_model_from_gcs(blob_name: str, local_filename: str):
     os.makedirs(MODEL_DIR, exist_ok=True)
     local_path = os.path.join(MODEL_DIR, local_filename)
 
     if not os.path.exists(local_path):
-        s3 = boto3.client("s3")
-        s3.download_file(S3_BUCKET, model_key, local_path)
-        print(f"Downloaded {model_key} from S3.")
+        client = storage.Client() 
+        bucket = client.bucket(GCS_BUCKET)
+        blob = bucket.blob(blob_name)
+        blob.download_to_filename(local_path)
+        print(f"Downloaded gs://{GCS_BUCKET}/{blob_name} -> {local_path}")
 
     return local_path
 
-model_specific_path = download_model_from_s3("model_sim/model_0.pt", "model_0.pt")
-pkl_specific_path = download_model_from_s3("model_sim/reg_0.pkl", "reg_0.pkl")
+model_specific_path = download_model_from_gcs(GCS_BLOB_PT,  "model_0.pt")
+pkl_specific_path   = download_model_from_gcs(GCS_BLOB_PKL, "reg_0.pkl")
 
 checkpoint_specific = torch.load(model_specific_path,  map_location=torch.device('cpu'))
 reg_model_specific = joblib.load(pkl_specific_path)
@@ -75,7 +79,3 @@ def get_score_similarity(answer: str, reference: str):
         return round(score[0], 2)
     
     return 0
-
-# print(get_score_similarity("Buah mengandung banyak vitamin seperti vitamin C yang bisa meningkatkan sistem imun, jadi tubuh tidak mudah sakit.", "Mengonsumsi buah membantu menjaga daya tahan tubuh karena kaya akan vitamin, mineral, dan antioksidan yang dibutuhkan tubuh.", "specific-prompt"))
-# print(get_score_similarity("Buah itu penting karena bisa bikin kenyang dan segar, jadi kita nggak perlu makan makanan berat.", "Mengonsumsi buah membantu menjaga daya tahan tubuh karena kaya akan vitamin, mineral, dan antioksidan yang dibutuhkan tubuh.", "specific-prompt"))
-# print(get_score_similarity("Makan buah bisa bikin tubuh jadi kurus karena buah mengandung banyak lemak yang dibakar saat tidur.", "Mengonsumsi buah membantu menjaga daya tahan tubuh karena kaya akan vitamin, mineral, dan antioksidan yang dibutuhkan tubuh.", "specific-prompt"))

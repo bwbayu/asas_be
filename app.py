@@ -13,7 +13,7 @@ CORS(app)
 limiter = Limiter(
     get_remote_address,
     app=app,
-    default_limits=["200 per day", "100 per hour", "10 per minute"]
+    default_limits=["200 per day", "100 per hour", "20 per minute"]
 )
 
 DATA_PATH = pathlib.Path(__file__).parent / 'data' / 'prompt.json'

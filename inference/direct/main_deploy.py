@@ -4,7 +4,7 @@ import torch
 import warnings
 import regex as re
 import os
-import boto3
+from google.cloud import storage
 
 warnings.simplefilter("ignore")
 MODEL_NAME = 'indobenchmark/indobert-lite-base-p2'
@@ -12,21 +12,24 @@ tokenizer = BertTokenizer.from_pretrained(MODEL_NAME)
 model = DirectModel(MODEL_NAME)
 
 # download model from s3
-S3_BUCKET = "model-asas-bucket"
+GCS_BUCKET = os.getenv("GCS_BUCKET", "model-asas-demo")
 MODEL_DIR = "/tmp/model_direct"
+GCS_BLOB_MODEL = "model_direct/model_1.pt"
 
-def download_model_from_s3(model_key: str, local_filename: str):
+def download_model_from_gcs(blob_name: str, local_filename: str):
     os.makedirs(MODEL_DIR, exist_ok=True)
     local_path = os.path.join(MODEL_DIR, local_filename)
 
     if not os.path.exists(local_path):
-        s3 = boto3.client("s3")
-        s3.download_file(S3_BUCKET, model_key, local_path)
-        print(f"Downloaded {model_key} from S3.")
+        client = storage.Client()
+        bucket = client.bucket(GCS_BUCKET)
+        blob = bucket.blob(blob_name)
+        blob.download_to_filename(local_path)
+        print(f"Downloaded gs://{GCS_BUCKET}/{blob_name} -> {local_path}")
 
     return local_path
 
-model_specific_path = download_model_from_s3("model_direct/model_1.pt", "model_1.pt")
+model_specific_path = download_model_from_gcs(GCS_BLOB_MODEL, "model_1.pt")
 
 # Load weight ke model
 checkpoint_specific = torch.load(model_specific_path,  map_location=torch.device('cpu'))
@@ -56,8 +59,3 @@ def get_score_direct(answer: str, reference: str):
         return round(score.item(), 2)
     
     return 0
-
-# print(get_score_direct("Buah mengandung banyak vitamin seperti vitamin C yang bisa meningkatkan sistem imun, jadi tubuh tidak mudah sakit.", "Mengonsumsi buah membantu menjaga daya tahan tubuh karena kaya akan vitamin, mineral, dan antioksidan yang dibutuhkan tubuh.", "specific-prompt"))
-# print(get_score_direct("Buah itu penting karena bisa bikin kenyang dan segar, jadi kita nggak perlu makan makanan berat.", "Mengonsumsi buah membantu menjaga daya tahan tubuh karena kaya akan vitamin, mineral, dan antioksidan yang dibutuhkan tubuh.", "specific-prompt"))
-# print(get_score_direct("Makan buah bisa bikin tubuh jadi kurus karena buah mengandung banyak lemak yang dibakar saat tidur.", "Mengonsumsi buah membantu menjaga daya tahan tubuh karena kaya akan vitamin, mineral, dan antioksidan yang dibutuhkan tubuh.", "specific-prompt"))
-# print(get_score_direct("kami bangsa indonesia dengan ini menyatakan kemerdekaannya hal hal yang mengenai pemindahan kekuasaan dan lain lain di selenggarakan dengan cara seksama dan dengan tempo yang sesingkat singkatnya", "proklamasi kami bangsa indonesia dengan ini menyatakan kemerdekaan indonesia hal hal yang mengenai pemindahan kekuasaan d l l diselenggarakan dengan cara seksama dan dalam tempo yang sesingkat singkatnya jakarta 17 8 05 wakil wakil bangsa indonesia", "specific-prompt"))
