@@ -6,8 +6,6 @@ Flask backend for a demo website that **scores student answers** using two appro
 * `GET /student_answer` → load sample student answers from `data/answer.json`
 * `POST /score` → returns **two scores**: `direct_score` and `similarity_score` (the backend computes both; there’s no `approach` parameter)
 
-> Straight talk: **Production uses Google Cloud Storage (GCS)** — not S3. Python **3.10**. The **similarity** pipeline uses **Linear Regression** and ships a `.pkl` artifact.
-
 - Frontend code : https://github.com/bwbayu/asas_fe
 
 ---
