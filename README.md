@@ -57,8 +57,6 @@ Flask backend for a demo website that **scores student answers** using two appro
 * `inference/similarity/model/model.pt`
 * `inference/similarity/model/model.pkl`
 
-> Don’t mix modes. Pick **local** or **deploy** and make sure your imports in `app.py` match.
-
 ---
 
 ## Requirements
