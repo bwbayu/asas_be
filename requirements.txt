@@ -1,8 +1,8 @@
-flask
+flask[async]
 flask-cors
 transformers==4.48.0
 sentence_transformers==3.4.1
 joblib
 gunicorn
-flask-limiter
 google-cloud-storage
+google-cloud-firestore
